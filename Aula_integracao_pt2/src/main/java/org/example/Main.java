@@ -1,3 +1,4 @@
+package org.example;
 import DAO.UserDAO;
 import Model.User;
 public class Main {
@@ -10,9 +11,12 @@ public class Main {
         User user2 = new User("Murilo", "465");
 
         // adicionando usuários na tebela do BD
-        userDAO.insertUser(user);
-        userDAO.insertUser(user1);
-        userDAO.insertUser(user2);
+//        userDAO.insertUser(user);
+//        userDAO.insertUser(user1);
+//        userDAO.insertUser(user2);
+
+        // deletando um usuário da tabela do BD
+        userDAO.deleteUser(3);
 
     }
 }
