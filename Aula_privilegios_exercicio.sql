@@ -8,19 +8,21 @@ CREATE TABLE alunos(
     curso VARCHAR(45),
     nome VARCHAR(45),
     periodo INT,
-    PRIMARY KEY(matricula)
+    PRIMARY KEY(matricula, curso)
 );
 
 CREATE USER 'Monitor' IDENTIFIED BY '1111';
 CREATE USER 'Professor' IDENTIFIED BY '2222';
 
-GRANT SELECT, ALTER, DROP, UPDATE, 
- DELETE, CREATE, INSERT ON C207.alunos TO 'Monitor';
+GRANT SELECT, UPDATE, 
+ DELETE, CREATE ON C207.alunos TO 'Monitor';
  
  GRANT ALL PRIVILEGES ON C207.* TO 'Professor';
  
- REVOKE INSERT on C207.alunos FROM 'Monitor';
+REVOKE INSERT on C207.alunos FROM 'Monitor';
  
- REVOKE CREATE, ALTER, DROP ON C207.* FROM 'Professor';
+REVOKE CREATE, DROP ON C207.* FROM 'Professor';
  
- SHOW GRANTS FOR 'Monitor';
+SHOW GRANTS FOR 'Monitor';
+ 
+SHOW GRANTS FOR 'Professor';
