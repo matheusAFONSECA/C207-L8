@@ -85,8 +85,7 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
-# AQUI COMEÇA A INSERÇÃO DE DADOS NAS TEBELAS
-
+# AQUI COMEÇA A INSERÇÃO DE DADOS NAS TEBELAS -> 5 registros
 INSERT INTO agente values 
 ('Vivi', 'Conceição-dos-Ouros', '2003-05-08', 'finanças', 'feminino', 'vivi@agente.com'),
 ('Juju', 'Zoro', '2000-05-08', 'porradaria', 'feminino', 'juju@agente.com'),
@@ -115,18 +114,21 @@ INSERT INTO agente_has_missao values
 (4, 5),
 (5, 3);
 
-SELECT nome, email FROM Agente;
-SELECT nome, data FROM missao;
-
-SELECT Agente.nome, Agente.email, missao.nome, missao.data
+# Selecionando o nome, email do agente e data e nome das missões onde cada um atuou
+SELECT Agente.nome, Agente.email, missao.data, missao.nome
 FROM Agente
-INNER JOIN missao ON ;
+INNER JOIN agente_has_missao ON Agente.idAgente = agente_has_missao.Agente_idAgente
+INNER JOIN missao ON agente_has_missao.missao_idmissao = missao.idmissao;
 
+# Selecionando a data, duração e nome do vilão de cada missão
 SELECT missao.data, missao.nome, missao.duracao, vilao.nome
 FROM missao
 INNER JOIN vilao ON vilao_idvilao = idvilao;
 
-
-
-
+# Selecionando os nomes do agente, da missão e do vilão
+SELECT Agente.nome, missao.nome, vilao.nome
+FROM Agente
+INNER JOIN agente_has_missao ON Agente.idAgente = agente_has_missao.Agente_idAgente
+INNER JOIN missao ON agente_has_missao.missao_idmissao = missao.idmissao
+INNER JOIN vilao ON vilao_idvilao = idvilao;
 
