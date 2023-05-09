@@ -108,6 +108,25 @@ INSERT INTO missao values
 ('2024-07-08', 'missao briga', 'Rio de Janeiro', 7, 5),
 ('2024-09-08', 'missao fuga', 'Belo Horizonte', 1, 4);
 
-INSERT INTO agente_has_missao values
+INSERT INTO agente_has_missao values 
+(1, 2),
+(2, 1),
+(3, 4),
+(4, 5),
+(5, 3);
+
+SELECT nome, email FROM Agente;
+SELECT nome, data FROM missao;
+
+SELECT Agente.nome, Agente.email, missao.nome, missao.data
+FROM Agente
+INNER JOIN missao ON ;
+
+SELECT missao.data, missao.nome, missao.duracao, vilao.nome
+FROM missao
+INNER JOIN vilao ON vilao_idvilao = idvilao;
+
+
+
 
 
