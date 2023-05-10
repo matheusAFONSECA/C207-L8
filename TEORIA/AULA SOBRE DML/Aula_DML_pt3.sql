@@ -1,0 +1,8 @@
+# UPDATE SIMPLES
+UPDATE departamento
+SET DataInicio = '2023-05-10'
+WHERE DNumero = 8;
+
+# UPDATE AVANÇADO -> DELICADO EM RELAÇÃO AOS DADOS
+UPDATE departamento
+SET DataInicio = '2023-05-10';
