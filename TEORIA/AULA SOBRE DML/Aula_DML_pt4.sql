@@ -1,0 +1,3 @@
+# DELETANDO REGISTROS
+DELETE FROM departamento
+WHERE Dnumero >= 7;
