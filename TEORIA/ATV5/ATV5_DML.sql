@@ -23,3 +23,26 @@ VALUES ('Projeto F', 5),
 ('Projeto A', 8);
 
 # atualizando o supervisor de três empregados
+UPDATE empregado
+SET SSN_Supervisor = 1
+WHERE SSN = 7;
+UPDATE empregado
+SET SSN_Supervisor = 1
+WHERE SSN = 10;
+UPDATE empregado
+SET SSN_Supervisor = 1
+WHERE SSN = 11;
+
+# atualizando o supervisor dos departamento cadastrados
+UPDATE departamento
+SET SSN_Empregado = 11
+WHERE DNumero >= 7;
+
+# atualizando a localização e o departamento de cada projeto cadastrado
+UPDATE projeto
+SET PLocalizacao = 'Morumbi - São Paulo', DNumero_Departamento = 9
+WHERE PNumero >= 5;
+
+# excluindo os projetos de um determindo departamento
+DELETE FROM projeto
+WHERE DNumero_Departamento = 9;
