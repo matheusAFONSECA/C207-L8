@@ -31,3 +31,11 @@ INSERT INTO estoque(cod_item,qtd_disponivel) VALUES
 (110,500),
 (120,300),
 (130,600);
+
+CREATE VIEW qtd_estoque AS (
+	SELECT i.nome 'Item', e.qtd_disponivel 'Quantidade de estoque'
+    FROM estoque e, itens_solicitacao i
+    WHERE e.cod_item = i.cod_item
+);
+
+SELECT * FROM qtd_estoque;
