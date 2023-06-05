@@ -38,3 +38,4 @@ UPDATE conta SET total = 200 WHERE numero = 2;
 UPDATE conta SET total = -92 WHERE numero = 3;
 
 SELECT * FROM conta;
+
