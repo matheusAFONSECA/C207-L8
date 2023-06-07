@@ -1,0 +1,4 @@
+# BUSCA TEXTUAIS
+SELECT PNome
+FROM empregado
+WHERE PNome LIKE 'J%n';
