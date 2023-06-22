@@ -6,7 +6,7 @@ insert into professor values (1, "Daniela Barude");
 insert into professor values (2, "Renan Sthel Duque");
 insert into professor values (3, "Luis Felipe Godoy");
 
-insert into materia values ("M001", "Calculo 1", 2);
+insert into materia values ("M001", "Matematica", 2);
 insert into materia values ("F201", "Física 1", 1);
 insert into materia values ("M005", "Calculo 3", 3);
 
